@@ -155,3 +155,11 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+production:
+  clients:
+    default:
+      # The standard MongoDB connection URI allows for easy
+      # replica set connection setup.
+      # Use environment variables or a config file to keep your
+      # credentials safe e.g. <%= ENV['MONGODB_URI'] %>.
+      uri: <%= ENV['MONGODB_URI'] %>
