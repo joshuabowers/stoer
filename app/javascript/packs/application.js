@@ -7,4 +7,20 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from 'store'
+import App from 'components/app'
+
+document.addEventListener( 'DOMContentLoaded', () => {
+  ReactDOM.render(
+    <Provider store={ store }>
+      <Router>
+        <App />
+      </Router>
+    </Provider>,
+    document.querySelector('#root')
+  )
+} );
